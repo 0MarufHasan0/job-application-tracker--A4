@@ -31,5 +31,22 @@ calculateCount()
 
 function toggleBtn (id){
 
+    // remove btn-primary from  all button 
+    allBtn.classList.remove('btn-primary') ;
+    interviewBtn.classList.remove('btn-primary') ;
+    rejectedBtn.classList.remove('btn-primary') ;
+
+//  added btn-active to all button 
+    allBtn.classList.add('btn-active') ;
+    interviewBtn.classList.add('btn-active') ;
+    rejectedBtn.classList.add('btn-active') ;
+
+    // console.log(id);
+
+    const selected = getElementId(id) ;
+    console.log (selected) ;
+
+    // selected.classList.add('btn-primary');
+
 
 }
