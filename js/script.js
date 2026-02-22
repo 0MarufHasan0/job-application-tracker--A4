@@ -138,8 +138,6 @@ mainContainer.addEventListener('click', function(event){
  }
 
 
-
- 
  calculateCount() ;
 
 } else if(event.target.id === 'rejected-btn'){
@@ -234,7 +232,7 @@ function renderInterview(){
             </div>
 
              <div>
-            <button>
+            <button class="deleted" onclick="deletedCard(this)">
                <a href="#"> <i class="fa-regular fa-trash-can"></i></a>
             </button>
         </div>
@@ -288,7 +286,7 @@ function renderInterview(){
             </div>
 
              <div>
-            <button>
+            <button  class="deleted" onclick="deletedCard(this)">
                <a href="#"> <i class="fa-regular fa-trash-can"></i></a>
             </button>
         </div>
@@ -303,3 +301,26 @@ function renderInterview(){
 
 
     }}
+
+
+    // deleted 
+
+    function deletedCard(button){
+    if (button.classList.contains('deleted')){
+        const jobCardd= button .parentElement.parentElement
+        console.log(jobCardd)
+         
+       
+if (jobCardd){
+    const jobName = jobCardd.querySelector('#job-name').innerText;
+    interViewList = interViewList.filter(item=> item.jobName !== jobName);
+    rejectedList = rejectedList.filter(item=> item.jobName !== jobName);
+}
+
+jobCardd.remove();
+
+calculateCount() ;
+
+    }
+    
+ }
