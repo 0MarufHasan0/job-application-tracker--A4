@@ -3,7 +3,7 @@ console.log('Hello World!');
 let interViewList = [];
 let rejectedList = [];
 let  currentStatus = [];
-let status ='all'
+
 
 // count section dhora
 const totalCount= getElementId('total-count');
@@ -11,22 +11,19 @@ const interviewCount= getElementId('interview-count');
 const rejectedCount= getElementId('rejected-count');
 const totalCount2 = getElementId('job')
 // button dhora 
-
 const allBtn = getElementId('all');
 const interviewBtn = getElementId('interview')
 const rejectedBtn = getElementId('rejected')
-
 // faka array
-
 const filterSection = getElementId('filter-section');
-
 // main container k dhora
 const mainContainer = document.querySelector('main')
-
-
-
 // card section dhora
 const allCards = getElementId('job-section')
+const noJobSection = getElementId('no-jobs-section')
+
+
+
 
 // caculate
 
@@ -38,13 +35,53 @@ function calculateCount(){
     totalCount2.innerText =` ${allCards.children.length} jobs `;
 
     if(currentStatus == 'interview'){
+
+        // 0 of 0 jobs
+
         totalCount2.innerText =` ${interViewList.length} of ${allCards.children.length} jobs `;
+
+        // No  job section jokhon job er count 0 thakbe eyta show  korbe  card
+
+        if(interViewList.length === 0){
+            noJobSection.classList.remove('hidden');
+        }else{
+            noJobSection.classList.add('hidden');
+        }
+
+
+
+
     } else if(currentStatus == 'rejected'){
+
+          // 0 of 0 jobs
         totalCount2.innerText =` ${rejectedList.length} of ${allCards.children.length} jobs `;
+
+        // No  job section jokhon job er count 0 thakbe eyta show  korbe  card
+
+        if(rejectedList.length === 0){
+            noJobSection.classList.remove('hidden');
+        } else{
+            noJobSection.classList.add('hidden');
+        }
     }
+
+    // All section er jonno 0 thakle  hidded
+
+        if(allCards.children.length === 0){
+            noJobSection.classList.remove('hidden');
+        } else{
+            noJobSection.classList.add('hidden');
+        }
+
+
 }
 
+
 calculateCount()
+
+
+
+
 
 // button toggle 
 
@@ -69,7 +106,7 @@ function toggleBtn (id){
     selected.classList.add('btn-primary');
     selected.classList.remove('btn-active');
 
-    // selected.classList.add('btn-primary');
+
     if(id =='interview'){
         allCards.classList.add('hidden');
         filterSection.classList.remove('hidden');
@@ -86,9 +123,16 @@ function toggleBtn (id){
         renderRejected()
         
     }
+
+
 calculateCount() ;
 
+// no job  section
+
 }
+
+
+
 
 // Main cotainer k dhora
 
@@ -104,9 +148,7 @@ mainContainer.addEventListener('click', function(event){
 
    parentNode.querySelector('#status').innerText='Interview';
 
-    
-
-   const jobInfo ={
+    const jobInfo ={
     jobName,
     jobSkill,
     jobRemote,
@@ -124,6 +166,7 @@ mainContainer.addEventListener('click', function(event){
     interViewList.push(jobInfo);
 
  }
+
  console.log(interViewList);
 
  rejectedList = rejectedList.filter(item=> item.jobName !== jobInfo.jobName );
@@ -133,6 +176,8 @@ mainContainer.addEventListener('click', function(event){
 
 
  calculateCount() ;
+
+// Rejected 
 
 } else if(event.target.id === 'rejected-btn'){
 
@@ -180,15 +225,15 @@ mainContainer.addEventListener('click', function(event){
 
 }
 
-
-
-
-
-
-
 })
 
+
+
+
+
 // element create for interview and rejected section
+//interview render
+
 
 function renderInterview(){
 
@@ -242,6 +287,7 @@ function renderInterview(){
 
     }}
 
+    // rejected render
 
 
     function renderRejected(){
@@ -249,6 +295,7 @@ function renderInterview(){
     filterSection.innerHTML ='';
 
     for( let rejected of rejectedList){
+
 
         let div = document.createElement('div');
         div.className =  'flex justify-between border rounded-md bg-primary-content p-8';
