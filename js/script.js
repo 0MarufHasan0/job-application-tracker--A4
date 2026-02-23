@@ -65,16 +65,17 @@ function calculateCount(){
         }
     }
 
-    // All section er jonno 0 thakle  hidded
-
-        if(allCards.children.length === 0){
-            noJobSection.classList.remove('hidden');
-        } else{
-            noJobSection.classList.add('hidden');
-        }
-
-
+    // All section er jonno 0 thakle  hiddeden
+        
+    if (currentStatus == 'all' && allCards.children.length === 0){
+        noJobSection.classList.remove('hidden');
+    } else if (currentStatus == 'all' && allCards.children.length > 0){
+        noJobSection.classList.add('hidden');
+    }
 }
+
+
+
 
 
 calculateCount()
