@@ -66,12 +66,7 @@ function calculateCount(){
     }
 
     // All section er jonno 0 thakle  hiddeden
-        
-    if (currentStatus == 'all' && allCards.children.length === 0){
-        noJobSection.classList.remove('hidden');
-    } else if (currentStatus == 'all' && allCards.children.length > 0){
-        noJobSection.classList.add('hidden');
-    }
+
 }
 
 
@@ -232,6 +227,7 @@ mainContainer.addEventListener('click', function(event){
 
 
 
+
 // element create for interview and rejected section
 //interview render
 
@@ -256,7 +252,7 @@ function renderInterview(){
                     <p id="remote-job" class="text-[#64748B]  tex-[5px] mt-4">${interview.jobRemote}</p>
                    </div>
 
-                   <p id="status" class="text-[#002C5C]  bg-[#EEF4FF] w-fit p-3 rounded-md my-5">${interview.interviewStatus}</p>
+                   <p id="status"class="text-[#002C5C] border border-green-500 bg-[#EEF4FF] w-fit p-3 rounded-md my-5">${interview.interviewStatus}</p>
 
                    <p id="job-discription" class="text-[#323B49]">
                     ${interview.jobDiscription}
@@ -272,8 +268,8 @@ function renderInterview(){
             </div>
 
              <div>
-            <button class="deleted" onclick="deletedCard(this)">
-               <a href="#"> <i class="fa-regular fa-trash-can"></i></a>
+             <button class="deleted border border-red-500 rounded-md p-1"onclick="deletedCard(this)">
+               <a href="#"> <i class="fa-regular fa-trash-can text-red-500"></i></a>
             </button>
         </div>
         
@@ -312,7 +308,7 @@ function renderInterview(){
                     <p id="remote-job" class="text-[#64748B]  tex-[5px] mt-4">${rejected.jobRemote}</p>
                    </div>
 
-                   <p id="status" class="text-[#002C5C]  bg-[#EEF4FF] w-fit p-3 rounded-md my-5">${rejected.interviewStatus}</p>
+                   <p id="status" class="text-[#002C5C] border border-red-500 bg-[#EEF4FF] w-fit p-3 rounded-md my-5">${rejected.interviewStatus}</p>
 
                    <p id="job-discription" class="text-[#323B49]">
                     ${rejected.jobDiscription}
@@ -328,8 +324,8 @@ function renderInterview(){
             </div>
 
              <div>
-            <button  class="deleted" onclick="deletedCard(this)">
-               <a href="#"> <i class="fa-regular fa-trash-can"></i></a>
+             <button class="deleted border border-red-500 rounded-md p-1"onclick="deletedCard(this)">
+               <a href="#"> <i class="fa-regular fa-trash-can text-red-500"></i></a>
             </button>
         </div>
         
