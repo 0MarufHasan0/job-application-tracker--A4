@@ -3,6 +3,7 @@ console.log('Hello World!');
 let interViewList = [];
 let rejectedList = [];
 let  currentStatus = [];
+let status ='all'
 
 // count section dhora
 const totalCount= getElementId('total-count');
@@ -27,28 +28,21 @@ const mainContainer = document.querySelector('main')
 // card section dhora
 const allCards = getElementId('job-section')
 
-// caculate 
+// caculate
+
 function calculateCount(){
     totalCount.innerText = allCards.children.length;
     interviewCount.innerText = interViewList.length;
     rejectedCount.innerText = rejectedList.length;
-//     totalCount2.innerText = allCards.children.length
-
-//     // ekhane interview button a dhukle job count dekhabe
-
-// const jobApplied = interViewList.length + rejectedCount.length
- 
-// if(totalCount2){
-//     totalCount2.innerText =`
-//     ${jobApplied} of ${totalCount} jobs
     
-//     `;
+    totalCount2.innerText =` ${allCards.children.length} jobs `;
+
+    if(currentStatus == 'interview'){
+        totalCount2.innerText =` ${interViewList.length} of ${allCards.children.length} jobs `;
+    } else if(currentStatus == 'rejected'){
+        totalCount2.innerText =` ${rejectedList.length} of ${allCards.children.length} jobs `;
+    }
 }
-
-
-
-
-
 
 calculateCount()
 
@@ -92,7 +86,7 @@ function toggleBtn (id){
         renderRejected()
         
     }
-
+calculateCount() ;
 
 }
 
@@ -303,24 +297,4 @@ function renderInterview(){
     }}
 
 
-    // deleted 
-
-    function deletedCard(button){
-    if (button.classList.contains('deleted')){
-        const jobCardd= button .parentElement.parentElement
-        console.log(jobCardd)
-         
-       
-if (jobCardd){
-    const jobName = jobCardd.querySelector('#job-name').innerText;
-    interViewList = interViewList.filter(item=> item.jobName !== jobName);
-    rejectedList = rejectedList.filter(item=> item.jobName !== jobName);
-}
-
-jobCardd.remove();
-
-calculateCount() ;
-
-    }
     
- }
