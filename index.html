@@ -6,7 +6,7 @@
     <title>Job Application Tracker</title>
 
     <!-- Icon -->
-    <link rel="shortcut icon" href="img/assignment_7959593 1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/" type="image/x-icon">
 
     <!-- tailwind+daisy  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -31,14 +31,14 @@
 
 </head>
 <body>
-    <header class="max-w-11/12 mx-auto m-5">
-        <h1 class="ml-4 text-3xl font-bold">Job Application Tracker</h1>
+    <header class="max-w-11/12 mx-auto m-5 "> 
+        <h1 class="ml-4 text-2xl md:text-3xl font-bold">Job Application Tracker</h1>
 
 
         <!-- Job count Div -->
          
         
-  <div class="card card-border bg-base-100 grid grid-cols-3 gap-8 m-5">
+  <div class="card card-border bg-base-100 grid grid-cols-3 gap-2 md:gap-8 md:m-5 m-2 ">
 
    <!-- Total  -->
   <div class="card-body bg-primary-content rounded-md">
@@ -64,18 +64,21 @@
   </div>
 
 </div>
+
     </header>
 
-<hr class="my-5  bg-gray-500 opacity-25 ">
+    <hr class="my-5 max-w-full  bg-gray-500 opacity-25  ">
 
-    <main class="max-w-11/12 mx-auto">
+
+
+    <main class="max-w-11/12 mx-auto ">
 
         <div class="flex justify-between mb-3">
             <h1 class="text-[#002C5C] font-bold text-2xl">Available Jobs</h1>
             <p id="job" class="text-[#64748B] font-semibold text-[16px]">  </p>
         </div>
 
-        <div class=" flex mb-6 gap-2">
+        <div class=" flex mb-6 gap-2 ">
           <button onclick="toggleBtn('all')" id="all" class="btn btn-primary">All</button>
           <button onclick="toggleBtn('interview')" id="interview" class="btn btn-active">Interview</button>
           <button onclick="toggleBtn('rejected')" id="rejected" class="btn btn-active">Rejected</button>
@@ -430,8 +433,8 @@
 
         <!-- section jpb jodi 0 thake tahole show korbe  -->
 
-        <section id="no-jobs-section" class="w-11/12 mx-auto hidden">
-            <div class="md:m-60 m-30">
+        <section id="no-jobs-section" class="w-11/12 py-10  mx-auto hidden">
+            <div class="md:m-30 m-10">
   <figure class="flex justify-center items-center ">
 
   <img src="./img/assignment_7959593 1.png" alt="Assignment Image">
