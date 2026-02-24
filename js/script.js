@@ -40,7 +40,7 @@ function calculateCount(){
 
         totalCount2.innerText =` ${interViewList.length} of ${allCards.children.length} jobs `;
 
-        // No  job section jokhon job er count 0 thakbe eyta show  korbe  card
+        // No  job section  ====>  jokhon job er count 0 thakbe eyta show  korbe  card
 
         if(interViewList.length === 0){
             noJobSection.classList.remove('hidden');
@@ -56,7 +56,7 @@ function calculateCount(){
           // 0 of 0 jobs
         totalCount2.innerText =` ${rejectedList.length} of ${allCards.children.length} jobs `;
 
-        // No  job section jokhon job er count 0 thakbe eyta show  korbe  card
+        // No  job section ====> jokhon job er count 0 thakbe eyta show  korbe  card
 
         if(rejectedList.length === 0){
             noJobSection.classList.remove('hidden');
@@ -123,7 +123,6 @@ function toggleBtn (id){
 
 calculateCount() ;
 
-// no job  section
 
 }
 
